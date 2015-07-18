@@ -13,14 +13,14 @@ my $build = Module::Build
                           'Module::Pluggable'              => 0,
                           'Text::CSV'                      => 0,
                           'AnyDBM_File'                    => 0,
-#                         'Bot::BasicBot::Pluggable::Module::Fun'         => '0.9',
-#                         'Bot::BasicBot::Pluggable::Module::Weather'     => '0.9',
-#                         'Bot::BasicBot::Pluggable::Module::Tools'       => '0.95',
-#                         'Bot::BasicBot::Pluggable::Module::Search'      => '0.96',
-#                         'Bot::BasicBot::Pluggable::Module::Network'     => '0.9',
                         },
          scripts     => [ 'bin/infobot', 'bin/infobot-import' ],
          create_makefile_pl => 'traditional',
+         meta_merge => {
+             resources => {
+                 repository => 'https://github.com/simonwistow/Bot-Infobot',
+             }
+         },
        );
 
 $build->create_build_script;
